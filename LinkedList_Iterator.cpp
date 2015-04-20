@@ -9,15 +9,9 @@
 #include "LinkedList_Iterator.h"
 
 template<class T>
-LinkedList_Iterator<T>::LinkedList_Iterator(T* node){
+LinkedList_Iterator<T>::LinkedList_Iterator(T *node){
     p = node;
 }
-
-
-/*template<class T>
-LinkedList_Iterator<T>::~LinkedList_Iterator(){
-    delete p;
-}*/
 
 template<class T>
 T& LinkedList_Iterator<T>::operator *(){
@@ -28,7 +22,6 @@ LinkedList_Iterator<T>& LinkedList_Iterator<T>::operator =(const LinkedList_Iter
     p = itr.p;
     return  *this;
 }
-
 
 
 template<class T>

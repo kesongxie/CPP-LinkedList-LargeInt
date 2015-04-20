@@ -17,16 +17,44 @@ template <class T>
 class LinkedList_Iterator:public std::iterator<std::input_iterator_tag, int>
 {
 public:
-    //don't need destrutor,otherwise would have error, pointer being freed was not allocated since p always point to other nodes(those nodes would be deleted)
-    LinkedList_Iterator(T*);
+    //don't need destrutor,otherwise since p always point to other nodes(those nodes would be deleted)
+    
+    /* default constuctor
+     */
+    LinkedList_Iterator(T *node);
+    
+    /* overload the dereference operator *
+     * return the data member T *p
+     */
     T& operator *();
+    
+    /* overload the assigment operator =
+     * param LinkedList_Iterator &itr
+     * return LinkedList_Iterator&
+     */
     LinkedList_Iterator& operator =(const LinkedList_Iterator &itr);
+    
+    /* overload the incresement operator ++ which would set the current iterator pointing to the next node
+     * return LinkedList_Iterator&
+     */
     LinkedList_Iterator& operator ++();
+    
+    /* overload the pre-decreasement operator -- which would set the current iterator pointing to the previous node
+     * return LinkedList_Iterator&
+     */
     LinkedList_Iterator& operator --();
+    
+    /* overload the comparison operator ==
+     * return bool
+     */
     bool operator ==(LinkedList_Iterator<T>);
+    
+    /* overload the comparison operator !=
+     * return bool
+     */
     bool operator !=(LinkedList_Iterator<T>);
 private:
-    T *p; // T is of a node<T> type
+    T *p; // T is a node<T> type
 };
 
 
